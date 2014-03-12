@@ -1,0 +1,26 @@
+RDO bugzilla queries
+====================
+
+To query all RDO bugs and display them formatted by the below sections:
+
+    - NEW, ASSIGNED, ON_DEV
+    - MODIFIED, POST, ON_QA
+    - VERIFIED
+
+  $ ./query-all-rdo-bugs.sh RDO
+
+Or, to redirect to a file, with time stamp:
+
+  $ ./query-all-rdo-bugs.sh RDO |& \
+     tee all-rdo-bugs-$(date +"%d-%m-%Y-%H:%M:%Z").txt
+
+
+To query bugs by specific component:
+
+  $ ./openstack-bugs-by-component.sh
+
+Or, to redirect to a file:
+
+  $ ./openstack-bugs-by-component.sh |& 
+    tee rdo-component-bugs-$(date +"%d-%m-%Y-%H:%M:%Z").txt
+
