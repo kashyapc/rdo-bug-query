@@ -12,15 +12,14 @@ To query all RDO bugs and display them formatted by the below sections:
 Or, to redirect to a file, with time stamp:
 
   $ ./query-all-rdo-bugs.sh RDO |& \
-     tee all-rdo-bugs-$(date +"%d-%m-%Y-%H:%M:%Z").txt
+        tee all-rdo-bugs-$(date +"%d-%m-%Y-%H:%M:%Z").txt
 
 
 To query bugs by specific component:
 
-  $ ./openstack-bugs-by-component.sh
+  $ ./rdo-bugs-by-component.sh
 
 Or, to redirect to a file:
 
-  $ ./openstack-bugs-by-component.sh |& 
-    tee rdo-component-bugs-$(date +"%d-%m-%Y-%H:%M:%Z").txt
-
+  $ ./rdo-bugs-by-component.sh RDO openstack-nova |& \
+        tee rdo-component-bugs-$(date +"%d-%m-%Y-%H:%M:%Z").txt
